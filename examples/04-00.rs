@@ -11,21 +11,11 @@
 //!
 //! Although it's not usually a good idea to compare floating point numbers exactly, the results
 //! here can be represented exactly in binary.
-struct MeanResult {
-    mean: f64,
-    values: [f64; 100],
-}
-
-fn mean(values: [f64; 100]) -> MeanResult {
+fn mean(values: [f64; 100]) -> (f64, [f64; 100]) {
     unimplemented!()
 }
 
-struct VarianceResult {
-    variance: f64,
-    values: [f64; 100],
-}
-
-fn variance(values: [f64; 100], mean: f64) -> VarianceResult {
+fn variance(values: [f64; 100], mean: f64) -> (f64, [f64; 100]){
     unimplemented!()
 }
 
@@ -39,13 +29,10 @@ fn main() {
     };
 
     // Compute and check the mean
-    let MeanResult {
-        mean: the_mean,
-        values,
-    } = mean(values);
+    let (the_mean, values) = mean(values);
     assert_eq!(the_mean, 49.5);
 
     // Compute and check the variance
-    let the_variance = variance(values, the_mean).variance;
+    let (the_variance, _) = variance(values, the_mean);
     assert_eq!(the_variance, 833.25)
 }
