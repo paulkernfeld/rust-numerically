@@ -2,8 +2,7 @@
 //!
 //! Also, don't use Rust's built-in `pow` function, that's too easy.
 //!
-//! Extra credit: how should this function deal with overflow? See
-//! https://huonw.github.io/blog/2016/04/myths-and-legends-about-integer-overflow-in-rust/
+//! Don't worry too much about overflow. Hopefully that will be covered in a later exercise.
 fn pow(x: u32, y: u32) -> Option<u32> {
     unimplemented!("Fill me in")
 }
